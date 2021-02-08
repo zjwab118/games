@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  r2dbc:
+    url: r2dbcs:mysql://localhost:3306/wm_game
+    username: root
+    password: 123456
+
+logging:
+  level:
+    web: debug
+    org:
+      springframework:
+        data:
+          r2dbc: debug
+    com:
+      boyal:
+        demo:
+          springr2dbcsamples: debug

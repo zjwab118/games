@@ -1,0 +1,205 @@
+# tomcat 配置
+server:
+  tomcat:
+    # Tomcat 工作目录路径
+    #basedir:
+    # Tomcat 编码
+    uri-encoding: UTF-8
+    # 对于 Tomcat 头文件不限制大小
+    max-swallow-size: -1
+  servlet:
+    context-path: /wm-boot
+    ## 专门针对 Controller层接口路径前缀全局配置
+    api:
+      path:
+        global-prefix: /api/v1
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/javascript,application/json,application/xml,text/html,text/xml,text/plain,text/css,image/*
+
+# actuator 暴露端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: metrics,httptrace
+
+spring:
+  profiles:
+    #此处由maven的环境选择决定
+    active: "@spring.active@"
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  #静态资源
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/, classpath:/static/, classpath:/public/,file:${wm.web.upload-path}
+  #json 时间戳统一转换
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  #开启aop
+  aop:
+    proxy-target-class: true
+  # 自动注入
+  autoconfigure:
+    exclude:
+      - com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+  #
+  #main:
+  #  allow-bean-definition-overriding: true
+  # 邮件设置
+  mail:
+    host: smtp.qq.com
+    username: meet.parker@foxmail.com
+    password: pamjnijkjkqdbbea
+    properties:
+      mail:
+        smpt:
+          # 认证
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    # 默认编码
+    default-encoding: UTF-8
+
+  # 缓存配置项
+  cache-conf:
+    # 前缀
+    prefix: wm
+  redis:
+    pushsub: # 开启消息订阅
+      enable: true
+    lettuce:
+      pool:
+        max-active: 8   #最大连接数据库连接数,设 0 为没有限制
+        max-idle: 8     #最大等待连接中的数量,设 0 为没有限制
+        max-wait: -1ms  #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+        min-idle: 0     #最小等待连接中的数量,设 0 为没有限制
+      shutdown-timeout: 100ms
+
+  # 数据库配置
+  datasource:
+    # 数据库连接池监控
+    druid:
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: .js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*
+
+    # 多数据源
+    dynamic:
+      druid:
+        # 连接池的配置信息
+        # 初始化大小，最小，最大
+        initial-size: 5
+        min-idle: 5
+        maxActive: 20
+        # 配置获取连接等待超时的时间
+        maxWait: 60000
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        # 打开PSCache，并且指定每个连接上PSCache的大小
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        # 配置监控统计拦截的 Filter，去掉后监控界面 SQL 无法统计，wall 用于防火墙
+        filters: stat,wall,slf4j
+        # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+        connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+
+#mybatis-plus 插件
+mybatis-plus:
+  #所有的mapper映射文件
+  mapper-locations:
+    - classpath*:com/wm/boot/game/**/mapper/*.xml
+  typeAliasesPackage: com.wm.boot.game.**.po # 实体扫描，多个package 继续往后跟
+  # 实体扫描  BaseEntity 的子类对象
+  typeAliasesSuperType: com.wm.boot.core.PO
+  global-config:
+    # 关闭Banner
+    banner: false
+    db-config:
+      # 主键类型 id-type:
+      # 数据库ID自增 - auto | 0   未设置主键类型 - none | 1   手动输入ID - input | 2  数字类型唯一ID - assign_id | 3  唯一ID一UUID - assign_uuid | 4
+      id-type: assign_id
+      logic-delete-field: deleted  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+      # 更新策略 - 防止更新 null 值到数据字段中 空字符串可以更新
+      # 不要改！！！如果想要非空修改 直接在对应字段上加注解 全局不允许 可空数据修改
+      update-strategy: not_empty
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    # 打印SQL 开发测试使用 生产关闭 ***
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# opsli 自定义配置
+wm:
+
+  system-name: "WM 网络竞技平台"
+
+  # token 认证
+  token-auth:
+    # 排除过滤url 格式 - List
+    url-exclusion:
+      - "/test.html"
+
+  # Java 软防火墙
+  waf:
+    # 开启防护
+    enable: true
+    # 开启XSS 防护
+    xss-filter: true
+    # 开启sql注入防护 (目前用不着sql防护 mybatis-plus就已经很完善了)
+    sql-filter: false
+    # 设置xss防护过滤器的优先级，值越小优先级越高（不要超过 shiroFilter）
+    order: 0
+    # 设置xss防护的url拦截路径
+    url-patterns: "/*"
+    # 排除过滤url
+    url-exclusion:
+      - "/doc.html"
+      - "/static/file"
+
+  # 超级管理员账号
+  superadmin: system
+  # token 有效时间 （分钟） 2小时
+  token-effective-time: 120
+
+  # 重置默认密码
+  default-pass: Aa123456
+
+  # 登录设置
+  login:
+    # 失败次数
+    slip-count: 5
+    # 失败N次后弹出验证码 （超过验证码阈值 弹出验证码）
+    slip-verify-count: 3
+    # 失败锁定时间(秒)
+    slip-lock-speed: 300
+
+  #加解密
+  encrypt-decrypt:
+    # RSA 加密算法
+    rsa:
+      # 公钥
+      public-key: "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCakyyq8rfkmKvKB2fz3hUeuD6tgParCmZmRc1OoL5EN+yXghQmDIrcZhewLZZLUpLQd3T3cRxKaW30nWNfoteNHgKjGYGu4+BZoyHZ8ltTmrolYGopiSwBMhO7kwAD4IK1PZHaoF2wPISH35ubbugykav7dTaWBDuNkvyBiv8qMQIDAQAB"
+      # 私钥
+      private-key: "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJqTLKryt+SYq8oHZ/PeFR64Pq2A9qsKZmZFzU6gvkQ37JeCFCYMitxmF7AtlktSktB3dPdxHEppbfSdY1+i140eAqMZga7j4FmjIdnyW1OauiVgaimJLAEyE7uTAAPggrU9kdqgXbA8hIffm5tu6DKRq/t1NpYEO42S/IGK/yoxAgMBAAECgYEAiWu+klwm0LxKPdpHuK7/58e1MVst8PHWB6aW2AhgHxX46NlkQE92RGsfNCnTLDPFAkCxZCrTE/SXJJmn9yY2qoS26OV0PbTGajk96M8lDi9JSmWCNV1eywPecObSyvtPd5jaPtq2jkgNY/hHJjH6kV7UAFZuaSK7jxskfq7uR2ECQQDPfmGjPiMc65+LE9U7jC4LokyUi1yCgN6AY5MgF6fkxUVJD2mtl9BqRK7qE0OnsRb0NzID3PSfa7aA2I0Rlsj/AkEAvrXUBQ6hfuEwD1896qpSJUr7tLidby/3jYwSoewuydDT2duDc2ZCz4/U/1NpxSxWT10ZZi2ExsFZn/3PDylczwJARA3oijkcHSUu69eybVh51bkCswnOasNHtwZxv+niWEdXhTH38EbFxcUHNaDh5MNRiwH7dobm+M7EShg8lJNHEwJAclRdU97OkFr9zeliHCGZd4P5XAFlWHfgJ7p2nR4Teqe3qZ6Aspj2qqpmnd7qxOrsn02H4YqeU+0sBs9I56T7XwJAAg8wHrh/FAPY96mAya0bpv6zm/7bave17vs+8B+fhBEHHuvetfv8Xi/RkXL0rjE4LaTHefoUbZPNbIhNYiN0CQ=="
+
+  # Excel 最大操作数量 防止OOM
+  excel-max-count: 20000
+
+  # 系统启动时间 为空则默认 真实当前系统启动时间
+  system-starter-time: "2020-09-10 00:00:00"
+

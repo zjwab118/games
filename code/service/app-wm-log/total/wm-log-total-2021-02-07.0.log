@@ -1,0 +1,230 @@
+2021-02-07 21:53:42.135  INFO 68865 --- [restartedMain] com.wm.boot.GameApplication              : Starting GameApplication using Java 11.0.10 on wilsondeMacBook-Pro.local with PID 68865 (/Users/wilson/projects/wm_boot/wm_start/target/classes started by wilson in /Users/wilson/projects/wm_boot)
+2021-02-07 21:53:42.143  INFO 68865 --- [restartedMain] com.wm.boot.GameApplication              : The following profiles are active: @spring.active@
+2021-02-07 21:53:42.211  INFO 68865 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 21:53:42.763  INFO 68865 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-07 21:53:42.764  INFO 68865 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-02-07 21:53:42.831  INFO 68865 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 1 R2DBC repository interfaces.
+2021-02-07 21:53:43.803  INFO 68865 --- [restartedMain] com.wm.boot.proxy.JdkProxy               : API:http://xxxx/
+2021-02-07 21:53:44.074  INFO 68865 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 21:53:44.377 DEBUG 68865 --- [restartedMain] s.w.r.r.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2021-02-07 21:53:44.403 DEBUG 68865 --- [restartedMain] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-02-07 21:53:44.426 DEBUG 68865 --- [restartedMain] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2021-02-07 21:53:44.454 DEBUG 68865 --- [restartedMain] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-02-07 21:53:44.650  INFO 68865 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2021-02-07 21:53:44.669  INFO 68865 --- [restartedMain] com.wm.boot.GameApplication              : Started GameApplication in 3.352 seconds (JVM running for 10.127)
+2021-02-07 21:56:46.568  INFO 69081 --- [restartedMain] com.wm.boot.GameApplication              : Starting GameApplication using Java 11.0.10 on wilsondeMacBook-Pro.local with PID 69081 (/Users/wilson/projects/wm_boot/wm_start/target/classes started by wilson in /Users/wilson/projects/wm_boot)
+2021-02-07 21:56:46.571  INFO 69081 --- [restartedMain] com.wm.boot.GameApplication              : The following profiles are active: @spring.active@
+2021-02-07 21:56:46.631  INFO 69081 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 21:56:47.138  INFO 69081 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-07 21:56:47.139  INFO 69081 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-02-07 21:56:47.221  INFO 69081 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 1 R2DBC repository interfaces.
+2021-02-07 21:56:47.858  INFO 69081 --- [restartedMain] com.wm.boot.proxy.JdkProxy               : API:http://xxxx/
+2021-02-07 21:56:48.073  INFO 69081 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 21:56:48.340 DEBUG 69081 --- [restartedMain] s.w.r.r.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2021-02-07 21:56:48.362 DEBUG 69081 --- [restartedMain] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-02-07 21:56:48.391 DEBUG 69081 --- [restartedMain] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2021-02-07 21:56:48.417 DEBUG 69081 --- [restartedMain] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-02-07 21:56:48.594  INFO 69081 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2021-02-07 21:56:48.610  INFO 69081 --- [restartedMain] com.wm.boot.GameApplication              : Started GameApplication in 2.671 seconds (JVM running for 8.936)
+2021-02-07 21:56:50.210 ERROR 69081 --- [reactor-tcp-nio-2] reactor.core.publisher.Operators         : Operator called default onErrorDropped
+
+reactor.core.Exceptions$ErrorCallbackNotImplemented: org.springframework.r2dbc.BadSqlGrammarException: executeMany; bad SQL grammar [select * from `user`]; nested exception is io.r2dbc.spi.R2dbcBadGrammarException: [1146] [42S02] Table 'wm_game.user' doesn't exist
+Caused by: org.springframework.r2dbc.BadSqlGrammarException: executeMany; bad SQL grammar [select * from `user`]; nested exception is io.r2dbc.spi.R2dbcBadGrammarException: [1146] [42S02] Table 'wm_game.user' doesn't exist
+	at org.springframework.r2dbc.connection.ConnectionFactoryUtils.convertR2dbcException(ConnectionFactoryUtils.java:235)
+	at org.springframework.r2dbc.core.DefaultDatabaseClient.lambda$inConnectionMany$8(DefaultDatabaseClient.java:147)
+	at reactor.core.publisher.Flux.lambda$onErrorMap$28(Flux.java:6632)
+	at reactor.core.publisher.Flux.lambda$onErrorResume$29(Flux.java:6685)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94)
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredError(FluxUsingWhen.java:411)
+	at reactor.core.publisher.FluxUsingWhen$RollbackInner.onComplete(FluxUsingWhen.java:488)
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2031)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:259)
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2031)
+	at reactor.core.publisher.Operators$MonoSubscriber.onComplete(Operators.java:1831)
+	at reactor.core.publisher.MonoIgnoreThen$ThenAcceptInner.onComplete(MonoIgnoreThen.java:323)
+	at reactor.core.publisher.Operators$MonoSubscriber.onComplete(Operators.java:1831)
+	at reactor.core.publisher.MonoIgnoreThen$ThenAcceptInner.onComplete(MonoIgnoreThen.java:323)
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:623)
+	at reactor.core.publisher.Operators.complete(Operators.java:135)
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4046)
+	at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:735)
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:154)
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56)
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:154)
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56)
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4046)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:83)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:132)
+	at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157)
+	at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291)
+	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:259)
+	at reactor.core.publisher.Operators.error(Operators.java:196)
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:52)
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55)
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4046)
+	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onError(FluxUsingWhen.java:377)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:841)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:607)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:587)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onError(FluxFlatMap.java:450)
+	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onError(FluxOnAssembly.java:392)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:132)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:132)
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.signalAsyncError(FluxWindowPredicate.java:341)
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.checkTerminated(FluxWindowPredicate.java:523)
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drainLoop(FluxWindowPredicate.java:475)
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drain(FluxWindowPredicate.java:419)
+	at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onError(FluxWindowPredicate.java:278)
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:191)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+	at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onNext(DiscardOnCancelSubscriber.java:70)
+	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+	at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onNext(MonoFlatMapMany.java:250)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:199)
+	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:118)
+	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+	at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
+	at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
+	at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
+	at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
+	at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
+	at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:184)
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:267)
+	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:377)
+	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:381)
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:94)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
+	at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1533)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1282)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1329)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:508)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:447)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: io.r2dbc.spi.R2dbcBadGrammarException: Table 'wm_game.user' doesn't exist
+	at dev.miku.r2dbc.mysql.ExceptionFactory.createException(ExceptionFactory.java:81)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ SQL "select * from `user`" [DatabaseClient]
+Stack trace:
+		at dev.miku.r2dbc.mysql.ExceptionFactory.createException(ExceptionFactory.java:81)
+		at dev.miku.r2dbc.mysql.QueryFlow.lambda$execute0$8(QueryFlow.java:241)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:169)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at dev.miku.r2dbc.mysql.util.DiscardOnCancelSubscriber.onNext(DiscardOnCancelSubscriber.java:70)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onNext(MonoFlatMapMany.java:250)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:199)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:118)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.EmitterProcessor.drain(EmitterProcessor.java:491)
+		at reactor.core.publisher.EmitterProcessor.tryEmitNext(EmitterProcessor.java:299)
+		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27)
+		at reactor.core.publisher.EmitterProcessor.onNext(EmitterProcessor.java:265)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:340)
+		at dev.miku.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:184)
+		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:267)
+		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:377)
+		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:381)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:94)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:187)
+		at dev.miku.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:95)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1533)
+		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1282)
+		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1329)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:508)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:447)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:834)
+
+2021-02-07 21:57:28.911  INFO 69101 --- [restartedMain] com.wm.boot.GameApplication              : Starting GameApplication using Java 11.0.10 on wilsondeMacBook-Pro.local with PID 69101 (/Users/wilson/projects/wm_boot/wm_start/target/classes started by wilson in /Users/wilson/projects/wm_boot)
+2021-02-07 21:57:28.914  INFO 69101 --- [restartedMain] com.wm.boot.GameApplication              : The following profiles are active: @spring.active@
+2021-02-07 21:57:28.971  INFO 69101 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 21:57:29.465  INFO 69101 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-07 21:57:29.466  INFO 69101 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-02-07 21:57:29.526  INFO 69101 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 1 R2DBC repository interfaces.
+2021-02-07 21:57:30.093  INFO 69101 --- [restartedMain] com.wm.boot.proxy.JdkProxy               : API:http://xxxx/
+2021-02-07 21:57:30.316  INFO 69101 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 21:57:30.573 DEBUG 69101 --- [restartedMain] s.w.r.r.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2021-02-07 21:57:30.598 DEBUG 69101 --- [restartedMain] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-02-07 21:57:30.643 DEBUG 69101 --- [restartedMain] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2021-02-07 21:57:30.672 DEBUG 69101 --- [restartedMain] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-02-07 21:57:30.876  INFO 69101 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2021-02-07 21:57:30.891  INFO 69101 --- [restartedMain] com.wm.boot.GameApplication              : Started GameApplication in 2.502 seconds (JVM running for 8.778)
+2021-02-07 21:59:17.673  INFO 69151 --- [restartedMain] com.wm.boot.GameApplication              : Starting GameApplication using Java 11.0.10 on wilsondeMacBook-Pro.local with PID 69151 (/Users/wilson/projects/wm_boot/wm_start/target/classes started by wilson in /Users/wilson/projects/wm_boot)
+2021-02-07 21:59:17.675  INFO 69151 --- [restartedMain] com.wm.boot.GameApplication              : The following profiles are active: @spring.active@
+2021-02-07 21:59:17.734  INFO 69151 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-07 21:59:18.194  INFO 69151 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-07 21:59:18.195  INFO 69151 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-02-07 21:59:18.265  INFO 69151 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 1 R2DBC repository interfaces.
+2021-02-07 21:59:18.842  INFO 69151 --- [restartedMain] com.wm.boot.proxy.JdkProxy               : API:http://xxxx/
+2021-02-07 21:59:19.047  INFO 69151 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-07 21:59:19.314 DEBUG 69151 --- [restartedMain] s.w.r.r.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2021-02-07 21:59:19.335 DEBUG 69151 --- [restartedMain] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-02-07 21:59:19.362 DEBUG 69151 --- [restartedMain] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2021-02-07 21:59:19.389 DEBUG 69151 --- [restartedMain] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-02-07 21:59:19.545  INFO 69151 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2021-02-07 21:59:19.560  INFO 69151 --- [restartedMain] com.wm.boot.GameApplication              : Started GameApplication in 2.387 seconds (JVM running for 8.763)

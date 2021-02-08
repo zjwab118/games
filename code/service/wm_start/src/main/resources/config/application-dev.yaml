@@ -1,0 +1,58 @@
+## ---- 开发环境 ---- ##
+
+# 端口设置
+server:
+  port: 8080
+
+spring:
+  #redis 配置
+  redis:
+    database: 0
+    host: 127.0.0.1
+    # password: '123456'
+    port: 6379
+
+  # 数据库配置
+  datasource:
+    druid: # 数据库连接池监控
+      stat-view-servlet:
+        # 数据库监控开关
+        enabled: true
+        # 登录用户名/密码
+        login-username: root
+        login-password: 123456
+        allow: # IP 白名单，没有配置或者为空，则允许所有访问
+        deny: # IP 黑名单，若白名单也存在，则优先使用
+    # 多数据源
+    dynamic:
+      #主数据源
+      #设置默认的数据源或者数据源组,默认值即为master,如果你主从默认下主库的名称就是master可不定义此项。
+      #primary: master
+      datasource:
+        master:
+          url: jdbc:mysql://127.0.0.1:3306/wm_game?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: 123456
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        # 多数据源配置
+        #slave-datasource:
+          #url: jdbc:mysql://127.0.0.1:3306/opsli-boot?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
+          #username: root
+          #password: 12345678
+          #driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+# knife4j 文档 配置
+knife4j:
+  basic:
+    enable: true #开启Swagger的Basic认证功能,默认是false
+    username: admin #Basic认证用户名
+    password: 123456  #Basic认证密码
+  production: false #是否生产环境 （生产环境默认屏蔽文档）
+
+wm: # wm 自定义配置
+  enable-demo: false # 演示模式
+  web:
+    upload-path: /Users/wilson/upload/wm/game # web 上传文件路径
+log:
+  path: /Users/wilson/logs/game # 系统日志
