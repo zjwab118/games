@@ -1394,3 +1394,23 @@ Consider marking one of the beans as @Primary, updating the consumer to accept m
 2021-02-08 21:06:30.501  WARN 77286 --- [Finalizer] i.l.c.resource.DefaultClientResources    : io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
 2021-02-08 21:06:30.668  INFO 77286 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
 2021-02-08 21:06:30.681  INFO 77286 --- [restartedMain] com.wm.boot.GameApplication              : Started GameApplication in 2.575 seconds (JVM running for 8.768)
+2021-02-08 21:14:59.675  INFO 77540 --- [restartedMain] com.wm.boot.GameApplication              : Starting GameApplication using Java 11.0.10 on wilsondeMacBook-Pro.local with PID 77540 (/Users/wilson/projects/games/code/service/wm_start/target/classes started by wilson in /Users/wilson/projects/games/code/service)
+2021-02-08 21:14:59.679  INFO 77540 --- [restartedMain] com.wm.boot.GameApplication              : The following profiles are active: @spring.active@
+2021-02-08 21:14:59.740  INFO 77540 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-08 21:15:00.321  INFO 77540 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-08 21:15:00.321  INFO 77540 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-02-08 21:15:00.389  INFO 77540 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 1 R2DBC repository interfaces.
+2021-02-08 21:15:00.546  INFO 77540 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-08 21:15:00.548  INFO 77540 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-02-08 21:15:00.567  INFO 77540 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.wm.boot.user.repository.IUserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-02-08 21:15:00.568  INFO 77540 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-02-08 21:15:01.283  INFO 77540 --- [restartedMain] com.wm.boot.proxy.JdkProxy               : API:http://xxxx/
+2021-02-08 21:15:01.458  WARN 77540 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-02-08 21:15:01.699 DEBUG 77540 --- [restartedMain] s.w.r.r.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2021-02-08 21:15:01.712 DEBUG 77540 --- [restartedMain] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-02-08 21:15:01.744  WARN 77540 --- [Finalizer] i.l.c.resource.DefaultClientResources    : io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2021-02-08 21:15:01.746  WARN 77540 --- [Finalizer] i.l.c.resource.DefaultClientResources    : io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2021-02-08 21:15:01.749 DEBUG 77540 --- [restartedMain] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2021-02-08 21:15:01.779 DEBUG 77540 --- [restartedMain] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-02-08 21:15:02.035  INFO 77540 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2021-02-08 21:15:02.050  INFO 77540 --- [restartedMain] com.wm.boot.GameApplication              : Started GameApplication in 3.046 seconds (JVM running for 9.42)

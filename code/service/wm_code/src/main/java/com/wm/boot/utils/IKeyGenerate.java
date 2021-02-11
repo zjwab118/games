@@ -19,7 +19,7 @@ public interface IKeyGenerate {
      * @date 2021.02.08 19:56
      * @return java.lang.String
     */
-    default String newUUID(){
+     default  String newUUID(){
         UUID uuid = UUID.randomUUID();
         return uuid.toString().toUpperCase().replaceAll("-","");
     }

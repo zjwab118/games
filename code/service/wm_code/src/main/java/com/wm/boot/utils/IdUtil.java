@@ -13,6 +13,7 @@ import java.text.NumberFormat;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * @author wilson
@@ -21,18 +22,22 @@ import java.util.Map;
  * @date 2021.02.08 19:58
  */
 @Component
-public class IdUtil implements IKeyGenerate {
+public class IdUtil  {
+
+
+    //@Qualifier("redisDb")
+    private static ReactiveStringRedisTemplate redisDb;
 
     @Autowired
-    //@Qualifier("redisDb")
-    private ReactiveStringRedisTemplate redisDb;
+    void  init(ReactiveStringRedisTemplate redisDb){
+        IdUtil.redisDb =redisDb;
+    }
 
     private static final String cacheKey = "ENTITY::ID::GENERATE";
 
     private static final long timeOut = 24 * 60 * 60;
 
-    @Override
-    public Long newLongID(Class<?> clazz) {
+    public static Long newLongID(Class<?> clazz) {
         synchronized (clazz) {
             try {
                 String key = clazz.getName();
@@ -65,11 +70,13 @@ public class IdUtil implements IKeyGenerate {
             } catch (Exception ex) {
             }
         }
-        return IKeyGenerate.super.newLongID();
+        return newLongID();
 
     }
-
-    private Long createID(Long num, String day, Integer length) {
+    private static Long newLongID(){
+        return System.currentTimeMillis()*1000+ new Random().nextInt();
+    }
+    private static Long createID(Long num, String day, Integer length) {
         String id = String.valueOf(num);
         if (id.length() < length) {
             NumberFormat nf = NumberFormat.getInstance();
